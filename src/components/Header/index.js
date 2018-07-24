@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-import Theme from '../../utils/theme';
 
 import logo from '../../images/logo.svg';
 import logoLight from '../../images/logo-light.svg';

@@ -9,6 +9,10 @@ const Article = styled.article`
   }
 `;
 
+// const StyledLink = styled(Link)`
+//   transition: all 0.6s ease;
+// `;
+
 const PostListing = ({ post }) => (
   <Article>
     <h3>
