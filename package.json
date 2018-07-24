@@ -7,14 +7,23 @@
     "gatsby": "^1.9.202",
     "gatsby-image": "^1.0.38",
     "gatsby-link": "^1.6.37",
+    "gatsby-plugin-google-fonts": "0.0.4",
     "gatsby-plugin-react-helmet": "^2.0.5",
-    "gatsby-plugin-sharp": "^1.6.31",
+    "gatsby-plugin-sharp": "^1.6.48",
     "gatsby-plugin-styled-components": "^2.0.7",
+    "gatsby-plugin-typography": "^1.7.19",
+    "gatsby-remark-copy-linked-files": "^1.5.37",
+    "gatsby-remark-images": "^1.5.67",
     "gatsby-source-filesystem": "^1.5.21",
     "gatsby-transformer-remark": "^1.7.44",
-    "gatsby-transformer-sharp": "^1.6.20",
+    "gatsby-transformer-sharp": "^1.6.27",
     "react-helmet": "^5.2.0",
-    "styled-components": "^3.1.6"
+    "styled-components": "^3.1.6",
+    "typeface-frank-ruhl-libre": "0.0.54",
+    "typography": "^0.16.17",
+    "typography-theme-fairy-gates": "^0.15.11",
+    "typography-theme-funston": "^0.15.10",
+    "typography-theme-grand-view": "^0.15.10"
   },
   "keywords": [
     "gatsby"

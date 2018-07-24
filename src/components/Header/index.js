@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
+import Theme from '../../utils/theme';
 
 import logo from '../../images/logo.svg';
 import logoLight from '../../images/logo-light.svg';
+import theme from '../../utils/theme';
 
 const HeaderWrapper = styled.div`
   background: ${({ isHome }) =>
@@ -29,7 +31,7 @@ const HeaderWrapper = styled.div`
   .bg-img {
     /* display: ${({ isHome }) => (isHome ? 'flex' : 'none')}; */
     opacity: ${({ isHome }) => (isHome ? '0.85' : '0')};
-    transition: all 0.5s ease;
+    transition: all 0.6s ease;
   }
   svg {
     fill: red;
@@ -44,6 +46,30 @@ const HeaderContainer = styled.div`
   z-index: 2;
   display: flex;
   justify-content: space-between;
+  a {
+    text-shadow: none;
+    background-image: none;
+  }
+`;
+
+const Nav = styled.nav`
+  ul {
+    list-style: none;
+    display: flex;
+    a {
+      color: ${({ isHome }) => (isHome ? theme.colors.white : theme.colors.grey)};
+      text-decoration: none;
+      /* text-shadow: none;
+      background-image: none;
+      &:hover {
+        text-decoration: none;
+        background-image: none;
+      } */
+    }
+    li {
+      margin-left: 10px;
+    }
+  }
 `;
 
 export default class Header extends Component {
@@ -52,14 +78,14 @@ export default class Header extends Component {
     if (location.pathname !== prevProps.location.pathname) {
       if (this.props.location.pathname === '/') {
         this.wrapper.animate([{ height: '20vh' }, { height: '70vh' }], {
-          duration: 300,
+          duration: 600,
           fill: 'forwards',
           easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
           iterations: 1,
         });
       } else {
         this.wrapper.animate([{ height: '70vh' }, { height: '20vh' }], {
-          duration: 300,
+          duration: 600,
           fill: 'forwards',
           easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
           iterations: 1,
@@ -70,8 +96,9 @@ export default class Header extends Component {
 
   render() {
     const { data, location } = this.props;
+    const isHome = location.pathname === '/';
     return (
-      <HeaderWrapper isHome={location.pathname === '/'} ref={wrapper => (this.wrapper = ReactDOM.findDOMNode(wrapper))}>
+      <HeaderWrapper isHome={isHome} ref={wrapper => (this.wrapper = ReactDOM.findDOMNode(wrapper))}>
         <HeaderContainer>
           <h1 style={{ margin: 0 }}>
             <Link
@@ -85,7 +112,7 @@ export default class Header extends Component {
               {location.pathname !== '/' && <img src={logo} alt="Seers Logo" />}
             </Link>
           </h1>
-          <nav>
+          <Nav isHome={isHome}>
             <ul>
               <li>
                 <Link to="/">Home</Link>
@@ -94,7 +121,7 @@ export default class Header extends Component {
                 <Link to="/about">About</Link>
               </li>
             </ul>
-          </nav>
+          </Nav>
         </HeaderContainer>
         <Img
           className="bg-img"

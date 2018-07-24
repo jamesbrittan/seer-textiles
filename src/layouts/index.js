@@ -1,9 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import Typography from 'typography';
 
 import Header from '../components/Header';
 import './index.css';
+
+// const typography = new Typography({
+//   baseFontSize: '18px',
+//   baseLineHeight: 1.45,
+//   googleFonts: [
+//     {
+//       name: 'Arvo',
+//       styles: ['700'],
+//     },
+//     {
+//       name: 'Lato',
+//       styles: ['400', '400i', '700', '700i'],
+//     },
+//   ],
+//   headerFontFamily: ['Arvo', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
+//   bodyFontFamily: ['Lato', 'Helvetica Neue', 'sans-serif'],
+//   // See below for the full list of options.
+// });
+
+// // Or insert styles directly into the <head> (works well for client-only
+// // JS web apps.
+// typography.injectStyles();
 
 const Layout = ({ children, data, location }) => (
   <div>

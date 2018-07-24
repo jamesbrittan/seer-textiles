@@ -26,6 +26,14 @@ export const query = graphql`
           id
           frontmatter {
             title
+            cover_image {
+              publicURL
+              childImageSharp {
+                sizes(maxWidth: 425) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
           }
           fields {
             slug
