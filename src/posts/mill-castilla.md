@@ -3,7 +3,7 @@ title: "Castilla Textil"
 date: "2018-02-21"
 tags: "mill"
 cover_image: "../images/castilla.jpg"
-link: "www.castillatextil.com/"
+link: "www.castillatextil.com"
 location: "Spain"
 ---
 

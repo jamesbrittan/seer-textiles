@@ -3,11 +3,13 @@ import Link from 'gatsby-link';
 import styled from 'styled-components';
 // import ListItem from '../components/Posts/ListItem';
 import List from '../components/Posts/List';
+import Contact from '../components/Contact';
 
 const IndexPage = ({ data }) => (
   <div>
-    <List type="mill" content={data.allMarkdownRemark.edges} />
     <List type="exhibition" content={data.allMarkdownRemark.edges} />
+    <Contact />
+    <List type="mill" content={data.allMarkdownRemark.edges} />
   </div>
 );
 export default IndexPage;

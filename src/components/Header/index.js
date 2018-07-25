@@ -18,7 +18,6 @@ const HeaderWrapper = styled.div`
   filter: ${({ isHome }) =>
     isHome ? 'linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,0.8) 20%,rgba(58,71,78,0) 100%)' : 'none'};
 
-  margin-bottom: 1.45rem;
   overflow: hidden;
   position: relative;
   height: ${({ isHome }) => (isHome ? '70vh' : '20vh')};
@@ -39,7 +38,7 @@ const HeaderWrapper = styled.div`
 
 const HeaderContainer = styled.div`
   margin: 0 auto;
-  max-width: 960px;
+  max-width: ${theme.maxWidth};
   padding: 1.45rem 1.0875rem;
   position: relative;
   z-index: 2;
@@ -58,12 +57,6 @@ const Nav = styled.nav`
     a {
       color: ${({ isHome }) => (isHome ? theme.colors.white : theme.colors.grey)};
       text-decoration: none;
-      /* text-shadow: none;
-      background-image: none;
-      &:hover {
-        text-decoration: none;
-        background-image: none;
-      } */
     }
     li {
       margin-left: 10px;
