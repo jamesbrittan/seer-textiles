@@ -53,7 +53,7 @@ Layout.propTypes = {
 };
 
 export default Layout;
-
+// TODO - don't load needlessly large background image
 export const query = graphql`
   query SiteTitleQuery {
     site {
@@ -62,7 +62,7 @@ export const query = graphql`
       }
     }
     background: imageSharp(id: { regex: "/bg.jpeg/" }) {
-      sizes(maxWidth: 1240) {
+      sizes(maxWidth: 1600) {
         ...GatsbyImageSharpSizes
       }
     }

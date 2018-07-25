@@ -1,15 +1,15 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import PostListing from '../components/Posts/PostListing';
+import styled from 'styled-components';
+// import ListItem from '../components/Posts/ListItem';
+import List from '../components/Posts/List';
 
 const IndexPage = ({ data }) => (
   <div>
-    <h2>Posts</h2>
-    {data.allMarkdownRemark.edges.map(({ node }) => <PostListing key={node.id} post={node} />)}
-    <Link to="/page-2/">Go to page 2</Link>
+    <List type="mill" content={data.allMarkdownRemark.edges} />
+    <List type="exhibition" content={data.allMarkdownRemark.edges} />
   </div>
 );
-
 export default IndexPage;
 
 export const query = graphql`
@@ -26,10 +26,12 @@ export const query = graphql`
           id
           frontmatter {
             title
+            link
+            tags
             cover_image {
               publicURL
               childImageSharp {
-                sizes(maxWidth: 425) {
+                sizes(maxWidth: 300) {
                   ...GatsbyImageSharpSizes
                 }
               }
