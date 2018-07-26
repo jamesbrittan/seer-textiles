@@ -12,7 +12,7 @@ const icons = {
 };
 
 const details = {
-  email: '<a href="ianrees@seertextiles.com">ianrees@seertextiles.com</a>',
+  email: '<a class="no-shadow" href="mailto:ianrees@seertextiles.com">ianrees@seertextiles.com</a>',
   telephone: '<span>+44 (0) 7770 608922</span>',
   mail: '<address>Highbeech Lodge, Newport Road<br/> Chepstow, Monmouthshire <br/>NP16 5BB</address>',
 };
@@ -29,9 +29,12 @@ const StyledContact = styled.div`
 
 const InnerContact = styled.div`
   margin: 0 auto;
-  max-width: ${theme.maxWidth};
+  /* max-width: ${theme.maxWidth}; */
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  @media (max-width: ${theme.responsiveSizes.small}) {
+    flex-direction: column;
+  }
   /* align-items: flex-end; */
 `;
 
@@ -51,10 +54,12 @@ const StyledBlock = styled.div`
     margin: 0;
     font-style: normal;
   }
-  a {
-    text-shadow: none;
-    background-image: none;
-    color: white;
+  @media (max-width: ${theme.responsiveSizes.small}) {
+    flex-direction: column;
+    margin-bottom: 36px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 `;
 
@@ -68,9 +73,9 @@ const Block = ({ icon }) => (
 const Contact = () => (
   <StyledContact>
     <InnerContact>
-      <Block icon="email" />
-      <Block icon="mail" />
       <Block icon="telephone" />
+      <Block icon="mail" />
+      <Block icon="email" />
     </InnerContact>
   </StyledContact>
 );

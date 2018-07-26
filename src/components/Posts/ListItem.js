@@ -10,7 +10,7 @@ const StyledDiv = styled.div`
 
 const ListItem = ({ post }) => (
   <StyledDiv>
-    <Link to={post.fields.slug}>
+    <Link className="no-shadow" to={post.fields.slug}>
       <img srcSet={post.frontmatter.cover_image.childImageSharp.sizes.srcSet} />
     </Link>
 

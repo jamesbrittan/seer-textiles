@@ -8,17 +8,13 @@ const OuterList = styled.div`
 `;
 
 const StyledList = styled.div`
-  max-width: ${theme.maxWidth};
+  max-width: 960px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
   padding: 3rem 0;
-  a {
-    text-shadow: none;
-    background-image: none;
-  }
   img {
     margin: 0;
   }

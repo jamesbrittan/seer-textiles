@@ -39,7 +39,7 @@ const HeaderWrapper = styled.div`
 const HeaderContainer = styled.div`
   margin: 0 auto;
   max-width: ${theme.maxWidth};
-  padding: 1.45rem 1.0875rem;
+  padding: 1.45rem 0;
   position: relative;
   z-index: 2;
   display: flex;

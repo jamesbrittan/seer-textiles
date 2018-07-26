@@ -6,6 +6,9 @@ const theme = {
     darkBlue: '#3F697F',
     white: '#FFFFFF',
   },
+  responsiveSizes: {
+    small: '760px',
+  },
 };
 
 export default theme;
