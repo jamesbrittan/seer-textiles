@@ -7,9 +7,9 @@ import Contact from '../components/Contact';
 
 const IndexPage = ({ data }) => (
   <div>
-    <List type="exhibition" content={data.allMarkdownRemark.edges} />
+    <List type="exhibition" title="Exhibitions" content={data.allMarkdownRemark.edges} />
     <Contact />
-    <List type="mill" content={data.allMarkdownRemark.edges} />
+    <List type="mill" title="Mills" content={data.allMarkdownRemark.edges} />
   </div>
 );
 export default IndexPage;

@@ -38,7 +38,7 @@ const HeaderWrapper = styled.div`
 
 const HeaderContainer = styled.div`
   margin: 0 auto;
-  max-width: ${theme.maxWidth};
+  max-width: ${theme.maxWidths.md};
   padding: 1.45rem 0;
   position: relative;
   z-index: 2;
@@ -47,6 +47,11 @@ const HeaderContainer = styled.div`
   a {
     text-shadow: none;
     background-image: none;
+  }
+  @media (max-width: ${theme.responsiveSizes.small}) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
@@ -91,7 +96,7 @@ export default class Header extends Component {
     const isHome = location.pathname === '/';
     return (
       <HeaderWrapper isHome={isHome} ref={wrapper => (this.wrapper = ReactDOM.findDOMNode(wrapper))}>
-        <HeaderContainer>
+        <HeaderContainer className="narrow-screen-padding">
           <h1 style={{ margin: 0 }}>
             <Link
               to="/"

@@ -29,21 +29,21 @@ const StyledContact = styled.div`
 
 const InnerContact = styled.div`
   margin: 0 auto;
-  /* max-width: ${theme.maxWidth}; */
+  max-width: 1500px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   @media (max-width: ${theme.responsiveSizes.small}) {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-  /* align-items: flex-end; */
 `;
 
 const StyledBlock = styled.div`
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
+  width: 33.33334%;
   align-items: center;
-  /* max-width: 300px; */
   a,
   span,
   address {
@@ -57,6 +57,7 @@ const StyledBlock = styled.div`
   @media (max-width: ${theme.responsiveSizes.small}) {
     flex-direction: column;
     margin-bottom: 36px;
+    width: 100%;
     &:last-of-type {
       margin-bottom: 0;
     }

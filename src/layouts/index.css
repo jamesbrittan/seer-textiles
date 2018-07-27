@@ -3,3 +3,10 @@ a.no-shadow {
   background-image: none;
   color: white;
 }
+
+@media (max-width: 1080px) {
+  .narrow-screen-padding {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
