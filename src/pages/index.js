@@ -1,12 +1,11 @@
 import React from 'react';
-import Link from 'gatsby-link';
-import styled from 'styled-components';
-// import ListItem from '../components/Posts/ListItem';
 import List from '../components/Posts/List';
 import Contact from '../components/Contact';
+import About from '../components/About';
 
 const IndexPage = ({ data }) => (
   <div>
+    {/* <About /> */}
     <List type="exhibition" title="Exhibitions" content={data.allMarkdownRemark.edges} />
     <Contact />
     <List type="mill" title="Mills" content={data.allMarkdownRemark.edges} />

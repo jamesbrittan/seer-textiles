@@ -7,6 +7,7 @@ import Img from 'gatsby-image';
 import logo from '../../images/logo.svg';
 import logoLight from '../../images/logo-light.svg';
 import theme from '../../utils/theme';
+import About from '../About';
 
 const HeaderWrapper = styled.div`
   background: ${({ isHome }) =>
@@ -20,7 +21,7 @@ const HeaderWrapper = styled.div`
 
   overflow: hidden;
   position: relative;
-  height: ${({ isHome }) => (isHome ? '70vh' : '20vh')};
+  height: ${({ isHome }) => (isHome ? '100vh' : '20vh')};
   h1 {
     img {
       height: 80px;
@@ -74,15 +75,15 @@ export default class Header extends Component {
     const { location } = this.props;
     if (location.pathname !== prevProps.location.pathname) {
       if (this.props.location.pathname === '/') {
-        this.wrapper.animate([{ height: '20vh' }, { height: '70vh' }], {
-          duration: 600,
+        this.wrapper.animate([{ height: '20vh' }, { height: '100vh' }], {
+          duration: 500,
           fill: 'forwards',
           easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
           iterations: 1,
         });
       } else {
-        this.wrapper.animate([{ height: '70vh' }, { height: '20vh' }], {
-          duration: 600,
+        this.wrapper.animate([{ height: '100vh' }, { height: '20vh' }], {
+          duration: 500,
           fill: 'forwards',
           easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
           iterations: 1,
@@ -109,7 +110,7 @@ export default class Header extends Component {
               {location.pathname !== '/' && <img src={logo} alt="Seers Logo" />}
             </Link>
           </h1>
-          <Nav isHome={isHome}>
+          {/* <Nav isHome={isHome}>
             <ul>
               <li>
                 <Link to="/">Home</Link>
@@ -118,7 +119,7 @@ export default class Header extends Component {
                 <Link to="/about">About</Link>
               </li>
             </ul>
-          </Nav>
+          </Nav> */}
         </HeaderContainer>
         <Img
           className="bg-img"
@@ -131,6 +132,7 @@ export default class Header extends Component {
           }}
           sizes={data.background.sizes}
         />
+        {isHome && <About />}
       </HeaderWrapper>
     );
   }

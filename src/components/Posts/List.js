@@ -26,7 +26,7 @@ const Title = styled.h2`
   width: 100%;
   margin: 0 auto; */
   text-align: center;
-  color: ${theme.colors.darkBlue};
+  color: ${theme.colors.grey};
   margin-top: 0;
   /* font-size: 200%; */
 `;
@@ -34,8 +34,8 @@ const Title = styled.h2`
 const List = ({ content, type, title }) => {
   const matchingContent = content.filter(({ node }) => node.frontmatter.tags === type);
   return (
-    <OuterList>
-      <Title>{title}</Title>
+    <OuterList id={`${title.toLowerCase()}-list`}>
+      <Title>{title.toUpperCase()}</Title>
       <StyledList>{matchingContent.map(({ node }) => <ListItem key={node.id} post={node} />)}</StyledList>
     </OuterList>
   );

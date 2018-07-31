@@ -9,8 +9,11 @@ const theme = {
   colors: {
     grey: '#3A474E',
     lightBlue: '#6AA9CC',
+    lightBlueTrans: 'rgba(106,169,204, 0.5)',
     darkBlue: '#3F697F',
+    darkBlueTrans: 'rgba(63,105,127, 0.5)',
     white: '#FFFFFF',
+    whiteTrans: 'rgba(255,255,255,0.6)',
   },
   responsiveSizes: {
     small: '760px',
